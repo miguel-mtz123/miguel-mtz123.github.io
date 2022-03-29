@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cifrador Cesar</title>
-    <link href="index.css" rel="stylesheet " />
-    <script src="index.js" type="text/javascript" defer></script>
-</head>
-<body>
-    <main>
-        <h1>Cifrador Cesar.</h1>
-        <form id="cifrador" autocomplete="off">
-            <input id="input-original" spellcheck="false" placeholder="Ingrese el texto" type="text" name="text">
-        </form>
-        <div id="resultado"></div>
-        <div class="rango">
-            <input id="rango" type="range" value="10" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
-            <output>10</output>
-        </div>
-    </main>
-</body>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <!-- documentation at http://getbootstrap.com/docs/4.0/, alternative themes at https://bootswatch.com/4-alpha/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="index.js"></script>
+
+        <title>Gramáticas formales</title>
+    </head>
+
+    <body class="cuerpo">
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-md-4" id="side-blocks">
+                    <div class="content-section">
+                        <h3>Cómo se utiliza:</h3>
+                        <p>Para utilizar el programa de gramáticas formales, introduzca su grámatica en el cuadro de Entrada, y pulse generar.</p>
+                    </div>
+                </div>
+                <div class="col-md-8" id="main-blocks">
+                    <div class="content-section">
+                    </div>
+                    <div class="content-section" id="input">
+                        <h3>Entrada:</h3>
+                        <p>Introduzca su grámatica en esta casilla.</p>
+                        <ol>
+                            <li>
+                                Una caja vacía es lambda por defecto.
+                            </li>
+                            <li>
+                                La entrada distingue entre mayúsculas y minúsculas, y los espacios en blanco no se ignoran.
+                            </li>
+                            <li>
+                                Utilice el carácter "|" para indicar una "o".
+                            </li>
+                        </ol>
+                        <form id="gramatica">
+                            <div class="form-group" id="reglas">
+                                <div class="d-flex flex-row flex-wrap" id="startrow">
+                                    <div class="p-2" style="width: 15%;">
+                                        <input type="text" style="cursor: not-allowed;" class="form-control NT" id="startsymbol" placeholder="Σ" readonly="readonly" value="Σ">
+                                    </div>
+                                    <div class="p-2" style="margin-top: 1%">
+                                        <p>→</p>
+                                    </div>
+                                    <div class="p-2" style="width: 15%;">
+                                        <input type="text" onkeydown="teclaPulsada(event)" class="form-control first" placeholder="λ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button onclick="agregarRegla()" type="button" class="btn btn-cst">Añadir una regla</button>
+                                </div>
+                            </div>
+                            <div class="startrow">
+                                <div class="col text-center">
+                                    <button type="button" class="btn btn-cst">Generar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
