@@ -16,7 +16,7 @@ function agregarRegla () {
     my_div.setAttribute("style", "width: 15%");
     var my_input = document.createElement("input");
     my_input.setAttribute("type", "text");
-    my_input.setAttribute("maxlength", "1");
+    //my_input.setAttribute("maxlength", "1");
     my_input.classList.add("form-control");
     my_input.classList.add("NT");
     my_div.appendChild(my_input);
