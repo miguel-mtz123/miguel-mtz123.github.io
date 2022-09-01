@@ -1,3 +1,7 @@
+/**
+ * Función de ayuda para crear nuevas 
+ * producciones en el área de entrada.
+ */
 
 function agregarRegla () {
     
