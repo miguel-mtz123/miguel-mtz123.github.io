@@ -54,7 +54,7 @@ function agregarRegla () {
     my_div.classList.add("p-2");
     my_div.setAttribute("style", "width: 10%");
     var my_img = document.createElement("img");
-    my_img.setAttribute("src", "imagenes/icons8-close.svg");
+    my_img.setAttribute("src", "icons8-close.svg");
     my_img.setAttribute("width", "25");
     my_img.setAttribute("height", "25");
     my_img.setAttribute("onclick", "eliminarRegla(this)");
